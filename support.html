@@ -11,7 +11,7 @@
 <main class="wrap doc">
   <a class="back" href="index.html">← COVR</a>
   <h1>Support</h1>
-  <p>Need a hand with COVR, or want to tell us something? Email <a href="mailto:matt@hunch.tech?subject=COVR%20support">matt@hunch.tech</a> and we’ll reply within two working days. It helps to include your iPhone model, iOS version and what you were trying to do.</p>
+  <p>Need a hand with COVR, or want to tell us something? <a class="email" href="index.html" data-user="matt" data-domain="hunch.tech">Email us</a> and we’ll reply within two working days. It helps to include your iPhone model, iOS version and what you were trying to do.</p>
 
   <h2>Getting started</h2>
   <p>COVR runs on iPhone with iOS 18 or later. You sign in with Apple, and we never ask for a password or your name. When asked, allow location <strong>While Using the App</strong> so COVR can show places near you and confirm you’re there when you pray.</p>
@@ -42,7 +42,7 @@
     <li><strong>Report a problem with this place</strong> if it’s unsafe, offensive, on private land, or in the wrong spot. Reports are anonymous and reviewed within 24 hours, and a place that several people report is hidden straight away.</li>
     <li><strong>Hide places from this creator</strong> to remove everything they’ve made from your map. They aren’t told. You can show them again from your profile.</li>
   </ul>
-  <p>You can also email us about anything on COVR that concerns you.</p>
+  <p>You can also <a class="email" href="index.html" data-user="matt" data-domain="hunch.tech">email us</a> about anything on COVR that concerns you.</p>
 
   <h2>Community guidelines</h2>
   <p>Places you share are seen by everyone using COVR, so name and describe them as you would to a neighbour, and only place them somewhere people can safely and lawfully stop. COVR has no tolerance for hateful, harassing, threatening, sexual or violent content, for spam, or for sharing anyone’s personal details. We remove places that break these guidelines and may close the accounts of people who do.</p>
@@ -53,5 +53,11 @@
   <h2>Deleting your account</h2>
   <p>In the app, open your profile and tap <strong>Delete account</strong>, then confirm with Apple. This permanently deletes your account, prayer history, the places you made, and your saved places. If you can’t get into the app, email us from the address linked to your Apple ID and we’ll delete it for you.</p>
 </main>
+<script>
+  // The address is assembled here rather than written into the page, to keep it from scrapers.
+  for (const link of document.querySelectorAll("a.email")) {
+    link.href = `mailto:${link.dataset.user}@${link.dataset.domain}?subject=COVR%20support`;
+  }
+</script>
 </body>
 </html>
