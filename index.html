@@ -40,8 +40,15 @@
     <span>·</span>
     <a href="privacy.html">Privacy Policy</a>
     <span>·</span>
-    <a href="mailto:matt@hunch.tech">Contact</a>
+    <a class="email" href="support.html" data-user="matt" data-domain="hunch.tech" data-subject="COVR">Contact</a>
   </footer>
 </main>
+<script>
+  // The address is assembled here rather than written into the page, to keep it from scrapers.
+  for (const link of document.querySelectorAll("a.email")) {
+    const subject = link.dataset.subject ? `?subject=${encodeURIComponent(link.dataset.subject)}` : "";
+    link.href = `mailto:${link.dataset.user}@${link.dataset.domain}${subject}`;
+  }
+</script>
 </body>
 </html>
